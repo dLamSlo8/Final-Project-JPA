@@ -25,6 +25,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Stock {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long stockId;
      
     @NotNull
