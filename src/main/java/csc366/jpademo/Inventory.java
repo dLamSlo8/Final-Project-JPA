@@ -44,7 +44,7 @@ public class Inventory {
     private int quantity;
 
     @NotNull
-    @Column(columnDefinition = "double default 0")
+    @Column(columnDefinition = "decimal(7,2) default 0")
     private double pricePerUnit;
 
     public Inventory() { }

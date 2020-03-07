@@ -30,7 +30,8 @@ public class Supplier {
 
     @NotNull
     private String name;
-   
+  
+    @Column(columnDefinition = "VARCHAR(255) UNIQUE")
     private String phone;
  
     @NotNull
@@ -38,6 +39,7 @@ public class Supplier {
     private String email;
     
     @NotNull
+    @Column(columnDefinition = "VARCHAR(255) UNIQUE")
     private String streetAddress;
 
     @NotNull

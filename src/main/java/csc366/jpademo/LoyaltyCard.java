@@ -32,6 +32,7 @@ public class LoyaltyCard {
     private Customer customer;
 
     @NotNull
+    @Column(columnDefinition = "VARCHAR(255) UNIQUE")
     private String phoneNumber;
 
     @NotNull 

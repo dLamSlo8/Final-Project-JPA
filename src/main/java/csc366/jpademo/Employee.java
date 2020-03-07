@@ -39,6 +39,7 @@ public class Employee {
     @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP()")
     private Date hireDate;
   
+    @Column(columnDefinition = "VARCHAR(255) UNIQUE")
     private String phone;
 
     @NotNull

@@ -29,6 +29,7 @@ public class Store {
     private Long storeId;
 
     @NotNull
+    @Column(columnDefinition = "VARCHAR(255) UNIQUE")
     private String streetAddress;
     
     @NotNull

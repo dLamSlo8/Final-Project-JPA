@@ -33,7 +33,8 @@ public class Orders {
     @NotNull
     @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP()")
     Date orderDate;
-        
+
+    @NotNull        
     @Column(columnDefinition = "DATETIME")
     Date deliverDate;
  
