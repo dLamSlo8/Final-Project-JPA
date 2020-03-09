@@ -26,89 +26,89 @@ USE `dlam12`;
 -- insert store -> employee -> store_workers -> stock -> stock quantity ->
 -- product -> recipe -> customer -> payment_method -> transaction -> purchase_details
 
-insert into store(street_address, city, state, zip_code)
+insert into store(store_id, street_address, city, state, zip_code)
 values
-("1 Grand Ave.", "San Luis Obispo", "CA", 93405),
-("2 Grand Ave.", "San Luis Obispo", "CA", 93405);
+(31, "1 Grand Ave.", "San Luis Obispo", "CA", 93405),
+(32, "2 Grand Ave.", "San Luis Obispo", "CA", 93405);
 
-insert into employee(access_level, email, name, phone, salary)
-values('0', "dlam@mail.com", "Derek", "1234567890", 100),
-('2', "boss@mail.com", "Boss", "2345678901", 1000);
+insert into employee(employee_id, access_level, email, name, phone, salary)
+values(31, '0', "dlam@mail.com", "Derek", "1234567890", 100),
+(32, '2', "boss@mail.com", "Boss", "2345678901", 1000);
 
 insert into store_workers(work_stores_store_id, workers_employee_id)
 values
-(1, 1),
-(2, 1);
+(31, 31),
+(32, 31);
 
 insert into store_owners(own_stores_store_id, owners_employee_id)
 values 
-(1, 2),
-(2, 2);
+(31, 32),
+(32, 32);
 
-insert into stock(name)
-values("bread"),
-("peanut butter"),
-("jelly"),
-("coffee"),
-("milk"),
-("cup");
+insert into stock(stock_id, name)
+values(31, "bread"),
+(32, "peanut butter"),
+(33, "jelly"),
+(34, "coffee"),
+(35, "milk"),
+(36, "cup");
 
 insert into quantity(stock_id, store_id, quantity)
 values
-(1, 1, 1),
-(2, 1, 2),
-(3, 1, 1),
-(4, 1, 2),
-(5, 1, 1), 
-(6, 1, 1),
-(1, 2, 3),
-(2, 2, 2),
-(3, 2, 1),
-(4, 2, 2),
-(5, 2, 1),
-(6, 2, 1);
+(31, 31, 1),
+(32, 31, 2),
+(33, 31, 1),
+(34, 31, 2),
+(35, 31, 1), 
+(36, 31, 1),
+(31, 32, 3),
+(32, 32, 2),
+(33, 32, 1),
+(34, 32, 2),
+(35, 32, 1),
+(36, 32, 1);
 
-insert into product(name, price)
+insert into product(product_id, name, price)
 values
-("pb&j", 5.00),
-("latte", 4.00);
+(31, "pb&j", 5.00),
+(32"latte", 4.00);
 
 insert into recipe(product_id, stock_id, quantity)
 values
-(1, 1, 2),
-(1, 2, 1),
-(1, 3, 1),
-(2, 4, 2),
-(2, 5, 1),
-(2, 6, 1);
+(31, 31, 2),
+(31, 32, 1),
+(31, 33, 1),
+(32, 34, 2),
+(32, 35, 1),
+(32, 36, 1);
 
 insert into customer
 values
 (), (), (), ();
 
-insert into payment_method(type)
+insert into payment_method(payment_id, type)
 values
-("card"),
-("cash");
+(31, "card"),
+(32, "cash");
 
-insert into transaction(customer_id, employee_id, store_id, payment_method,
+insert into transaction(transaction_id, customer_id, employee_id, store_id, payment_method,
  total_price, sales_tax, date)
 values
-(1, 1, 1, "cash", 5.50, 10, "2020-01-01 10:00:00"),
-(2, 1, 1, "card", 8.80, 10, "2020-01-01 09:00:00"),
-(3, 1, 2, "cash", 10.10, 10, "2020-01-02 10:00:00"),
-(4, 1, 2, "card", 5.50, 10, "2020-01-02 09:00:00"),
-(1, 1, 2, "cash", 15.15, 10, "2020-01-01 11:00:00"),
-(3, 1, 1, "card", 4.40, 10, "2020-01-02 04:00:00");
+(31, 31, 31, 31, "cash", 5.50, 10, "2020-01-01 10:00:00"),
+(32, 32, 31, 31, "card", 8.80, 10, "2020-01-01 09:00:00"),
+(33, 33, 31, 32, "cash", 10.10, 10, "2020-01-02 10:00:00"),
+(34, 34, 31, 32, "card", 5.50, 10, "2020-01-02 09:00:00"),
+(35, 31, 31, 32, "cash", 15.15, 10, "2020-01-01 11:00:00"),
+(36, 33, 31, 31, "card", 4.40, 10, "2020-01-02 04:00:00");
 
 insert into purchase_details(product_id, transaction_id, quantity)
 values
-(1, 1, 1),
-(2, 2, 2),
-(1, 3, 2),
-(1, 4, 1),
-(1, 5, 3),
-(2, 6, 1);
+(31, 31, 1),
+(32, 32, 2),
+(31, 33, 2),
+(31, 34, 1),
+(31, 35, 3),
+(32, 36, 1);
 -- day 1
 --  store 1: 1 pbj 2 latte, $14.30
 --  store 2: 3 pbj 0 latte, $15.15
