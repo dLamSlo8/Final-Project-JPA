@@ -42,12 +42,12 @@ public class SafetyTraining {
    
     @NotNull
     @Column(columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP()")
-    private Date date;
+    private Date training_date;
 
     public SafetyTraining() { }
     
-    public SafetyTraining(Date date) {
-        this.date = date;
+    public SafetyTraining(Date training_date) {
+        this.training_date = training_date;
     }
     
     public Employee getEmployee() {
@@ -62,10 +62,10 @@ public class SafetyTraining {
     public void setTeacher(Employee teacher) {
         this.teacher = teacher;
     }
-    public Date getDate() {
-        return date;
+    public Date getTrainingDate() {
+        return training_date;
     }
-    public void setDate(Date date) {
-        this.date = date;
+    public void setTrainingDate(Date training_date) {
+        this.training_date = training_date;
     }
 }
