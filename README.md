@@ -1,10 +1,8 @@
 # JPA Demo
 Object-relational mapping demo, Java Persistence API (JPA)
 
-Run all tests with:
+Instructions to Create the Tables in mySQL
+- Edit src/test/java/csc366/jpademo/TableCreation.java with the mysql login information
+- Run the following command:
 
 `./gradlew test`
-
-To run a single test class (for example: `Demo0`):
-
-`./gradlew test --tests *Demo0`
